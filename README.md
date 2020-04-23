@@ -57,16 +57,36 @@ Update the base pom.xml with with fabric8 maven plugin
 ```
 
 ## Confirm the build
+```shell
 mvn clean install
+```
 
 ## Ensure you have an OCP enviornment provisioned and have logged in with appropriate credentials and create a new project
+```shell
 oc new-project broadleaf-demo
+```
 
 ## Deploy all modules
+```shell
 mvn fabric8:deploy
 
+[INFO] Reactor Summary for Broadleaf Spring Boot Community Demo 1.0.0-SNAPSHOT:
+[INFO] 
+[INFO] Community Demo Core ................................ SUCCESS [  9.535 s]
+[INFO] Community Demo Site ................................ SUCCESS [02:44 min]
+[INFO] Community Demo Admin ............................... SUCCESS [02:41 min]
+[INFO] Community Demo API ................................. SUCCESS [03:10 min]
+[INFO] Broadleaf Spring Boot Community Demo ............... SUCCESS [  3.289 s]
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  08:50 min
+```
+
 ## Confirm the pods have deployed
+```shell
 oc get pods
+```
 
 ```shell
 kubectl get pods --field-selector status.phase=Running
