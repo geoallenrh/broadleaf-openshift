@@ -5,9 +5,7 @@ Broadleaf Commerce is a popular opensource eCommerce plaform.  Given it's archit
 With the Fabric8 Maven Plugin, it was super easy.  Here are the steps I followed to deploy the 
 Broadleaf Commerce DemoSite - https://github.com/BroadleafCommerce/DemoSite
 
-Versions 
-OpenShift Version
-4.3.5
+OpenShift Version 4.3.5
 
 Clone the DemoSite (I selected the default branch - 
 https://github.com/BroadleafCommerce/DemoSite/tree/develop-6.0.x)
@@ -36,10 +34,10 @@ Since these modules will be in their own kubernetes Pod, there will not be able 
 
 There is an option to update the environment variable in OpenShift and modify the port during deployment.
 
-## Update the root pom.xml
+## Update the root pom.xml with the fabric8 maven plugin
 
 ```shell
-Update the base pom.xml with with fabric8 maven plugin
+
 <plugin>
     <groupId>io.fabric8</groupId>
     <artifactId>fabric8-maven-plugin</artifactId>
